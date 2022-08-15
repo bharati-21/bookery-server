@@ -7,7 +7,11 @@ const { initializeDatabaseConnection } = require("./db/db.connect");
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
+app.use(
+	cors({
+		credentials: true,
+	})
+);
 const port = process.env.PORT || 5000;
 
 initializeDatabaseConnection();
